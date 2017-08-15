@@ -5,6 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var i18n = require('i18n');
+i18n.configure({
+    locales:['ru', 'en'],
+    defaultLocale: 'en',
+    queryParameter: 'lang',
+    directory: __dirname + '/locales'
+});
+i18n.setLocale('en');
+
 var mongoose = require('mongoose');
 var uristring =
     process.env.MONGOLAB_URI ||
@@ -31,12 +40,22 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(i18n.init);
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req, res, next) {
+    // express helper for natively supported engines
+    res.locals.__ = res.__ = function() {
+        return i18n.__.apply(req, arguments);
+    };
+
+    next();
+});
 
 app.use('/', index);
 app.use('/users', users);

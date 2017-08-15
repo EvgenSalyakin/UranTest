@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     Posts.count({},function(err,count) {
         if (count) {
             Posts.find(function (err, posts) {
-                res.render('index', { title: 'Landing page' , posts});
+                res.render('index', { title: res.__('LandingPage') , posts});
             });
         } else {
             res.render('index', { title: 'Landing page', posts: {} });
