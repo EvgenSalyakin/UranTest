@@ -1,9 +1,28 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var router = express.Router();
 
-/* GET home page. */
+var PostSchema = new mongoose.Schema( {
+    title: { type: String, default: "No title" },
+    description: { type: String, default: "No description" },
+    content: { type: String, default: "No content" }
+} );
+
+var Posts = db.model("post",PostSchema);
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    Posts.count({},function(err,count) {
+        if (count) {
+            Posts.find(function (err, posts) {
+                res.render('index', { title: 'Landing page' , posts});
+            });
+        } else {
+            res.render('index', { title: 'Landing page', posts: {} });
+        }
+    } );
+
 });
 
 module.exports = router;
+
+

@@ -2,4 +2,20 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  mixin article(post)
+    .article
+      .article-wrapper
+        h2= post.title
+        h5= post.description
+        p #{post.content}
+
+
+  mixin list(id, posts)
+    each item in posts
+      +article(item)
+    //ul(id=id)
+    //  each item in posts
+    //    li= item.title
+
+  +list('posts-list', posts)
