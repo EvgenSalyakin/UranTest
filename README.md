@@ -36,7 +36,11 @@ $ git clone git://github.com/EvgenSalyakin/UranTest.git
 $ npm install
 ```
 
-<!--- **NOTE:** Do not forget to set the --->
+**NOTE:** If you want to restore demo-dump for DB then
+
+```sh
+$ mongorestore
+```
 
 then
 
