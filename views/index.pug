@@ -2,17 +2,7 @@ extends layout
 
 block content
 
-  h2= 'try these links:'
-  ol
-    li
-      a(href="/") #{'default lang'}
-    li
-      a(href="/?lang=en") #{'manually set default lang'}
-    li
-      a(href="/?lang=ru") #{'russian lang'}
-
-  h1= title
-  h2= __('Hello')
+  include header
 
   mixin article(post)
     .article
@@ -30,3 +20,5 @@ block content
     //    li= item.title
 
   +list('posts-list', posts)
+
+  include footer

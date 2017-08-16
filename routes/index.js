@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
                 res.render('index', { title: res.__('LandingPage') , posts});
             });
         } else {
-            res.render('index', { title: 'Landing page', posts: {} });
+            res.render('index', { title: res.__('LandingPage'), posts: {} });
         }
     } );
 
