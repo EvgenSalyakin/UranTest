@@ -16,11 +16,11 @@ i18n.setLocale('en');
 
 var mongoose = require('mongoose');
 var uristring =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
     process.env.MONGODB_URI ||
     'mongodb://localhost/urandb';
-
+console.log('**************');
+console.log(uristring);
+console.log('**************');
 var options = { promiseLibrary: require('bluebird') };
 //var db = mongoose.createConnection(uristring, options);
 global.db = mongoose.createConnection(uristring, options);
