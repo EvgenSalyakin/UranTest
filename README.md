@@ -1,14 +1,28 @@
 
 # Test task for Uran
 
-This is a test task.
+JavaScript/Node.js Developer
 
-## Boilerplate
+Pre-middle/middle
 
-Want to build something from scratch? use the [boilerplate](https://github.com/madhums/node-express-mongoose)
+To create landing-page using Node.js + Express OR Koa.
+Do not complicate the solution with higher-level frameworks. Landing page
+means that for the displaying on the client part you should use a template
+(nephritis, pug ... ...)
+Requirements:
+1) Use MongoDB as a database.
+2) All landing content must be kept in the database.
+3) To implement two languages for the content (language variants, for
+example ru/en), using middleware.
+4) To use ODM (mongoose, ...).
+5) To divide the configs of the project on staging/production.
+6) Readme describe what should be done to start (commands, etc), add
+dump of your data and describe how to deploy.
+7) Use only stable versions of Node.js, MongoDB, and third-party packages.
 
-* Checkout the [apps that are built using this approach](https://github.com/madhums/node-express-mongoose/wiki/Apps-built-using-this-approach)
-* The [wiki](https://github.com/madhums/node-express-mongoose/wiki) is wip, it has some information about the way application is setup.
+P.S. You are not limited in the choice of tools and structure both database
+and the project, but give reasons for your choice.
+Landing design is at your discretion.
 
 ## Requirements
 
