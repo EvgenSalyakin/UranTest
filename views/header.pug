@@ -1,12 +1,13 @@
-header#header
+header
+    div.full-screen
+        h1= title
 
-    h2= __('SelectLang')
-    ol
-        li
-            a(href="/") #{__('DefaultLang')}
-        li
-            a(href="/?lang=en") #{__('English')}
-        li
-            a(href="/?lang=ru") #{__('Russian')}
+        button(type='button' onclick="toggleHiden()").button-line #{__('SelectLang')}
+        ul#language-list.hide
+            li
+                a(href="/", onclick="toggleHiden()") #{__('DefaultLang')}
+            li
+                a(href="/?lang=en", onclick="toggleHiden()") #{__('English')}
+            li
+                a(href="/?lang=ru", onclick="toggleHiden()") #{__('Russian')}
 
-    h1= title
