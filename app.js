@@ -18,9 +18,7 @@ var mongoose = require('mongoose');
 var uristring =
     process.env.MONGODB_URI ||
     'mongodb://localhost/urandb';
-console.log('**************');
-console.log(uristring);
-console.log('**************');
+
 var options = { promiseLibrary: require('bluebird') };
 //var db = mongoose.createConnection(uristring, options);
 global.db = mongoose.createConnection(uristring, options);
