@@ -3,5 +3,7 @@
 	"SelectLang": "Выбор языка",
 	"DefaultLang": "Язык по умолчанию",
 	"English": "Английский",
-	"Russian": "Русский"
+	"Russian": "Русский",
+	"Author": "Автор",
+	"Date": "Дата"
 }

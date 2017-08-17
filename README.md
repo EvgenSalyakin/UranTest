@@ -37,7 +37,13 @@ $ git clone git://github.com/EvgenSalyakin/UranTest.git
 $ npm install
 ```
 
-**NOTE:** If you want to restore demo-dump for DB then
+Start mongo service
+
+```sh
+$ sudo service mongod start
+```
+
+**NOTE:** If you want to restore demo-dump for test then use:
 
 ```sh
 $ mongorestore

@@ -3,5 +3,7 @@
 	"SelectLang": "Select language",
 	"DefaultLang": "Default",
 	"English": "English",
-	"Russian": "Russian"
+	"Russian": "Russian",
+	"Author": "Author",
+	"Date": "Date"
 }

@@ -9,6 +9,8 @@ block content
       .article
         .article-wrapper
           h2= post.title
+          h6= __('Author')+ ': ' + post.author
+          h6= __('Date')+ ': ' + new Intl.DateTimeFormat(loc).format(post.date)
           h5= post.description
           p #{post.content}
 
